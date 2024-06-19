@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/types/new', [TypesController::class, 'store']);
     Route::get('/types/update/{id}', [TypesController::class, 'edit']);
     Route::post('/types/update/', [TypesController::class, 'update']);
-    Route::delete('/types/delete/{id}', [TypesController::class, 'destroy']);
+    Route::get('/types/delete/{id}', [TypesController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

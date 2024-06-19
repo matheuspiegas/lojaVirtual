@@ -85,6 +85,6 @@ class ProductsController extends Controller
         $product = Product::find($id);
         //deleta o produto no banco
         $product->delete();
-        return redirect('/products')->with('success', 'Produto excluído com sucesso!');
+        return redirect('/products')->with('deleted', 'Produto excluído!');
     }
 }

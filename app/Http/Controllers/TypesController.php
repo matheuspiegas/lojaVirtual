@@ -42,6 +42,9 @@ class TypesController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:2|max:20',
+        ]);
         $type = Type::find($request->id);
         $type->update([
             'name' => $request->name,
@@ -54,6 +57,6 @@ class TypesController extends Controller
         $type = Type::find($id);
         $type->products()->delete();
         $type->delete();
-        return redirect('/types')->with('success', 'Tipo excluído com sucesso!');
+        return redirect('/types')->with('deleted', 'Tipo excluído!');
     }
 }

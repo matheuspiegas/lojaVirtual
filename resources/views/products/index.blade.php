@@ -8,7 +8,16 @@
             href="{{ url('/products/new') }}">Cadastrar</a>
 
         <br><br>
-
+        @if (session('success'))
+        <div class="bg-green-200 rounded-md text-green-700 mb-4 p-3">
+            {{session('success')}}
+        </div>
+        @endif
+        @if (session('deleted'))
+        <div class="bg-red-200 rounded-md text-red-700 mb-4 p-3">
+            {{session('deleted')}}
+        </div>
+        @endif
         <div class="overflow-x-auto">
             <table class="min-w-full bg-gray-600 rounded-md text-center">
                 <thead>
